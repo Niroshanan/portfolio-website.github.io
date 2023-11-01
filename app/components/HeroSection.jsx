@@ -4,6 +4,12 @@ import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 
 export const HeroSection = () => {
+
+  const handleDownloadCv =() =>{
+    const downloadLink = document.createElement('a');
+    downloadLink.href = '/CV/S.Niroshanan_SE_intern.pdf';
+    downloadLink.click();
+  };
   return (
     <section>
       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -26,10 +32,10 @@ export const HeroSection = () => {
             Java C# and c. basic knowlege in HTML CSS,Javascript
           </p>
           <div>
-            <button className="px-6 py-3 pd-4 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 text-white hover:bg-white sm: mb-4 font-bold">
+            {/* <button className="px-6 py-3 pd-4 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 text-white hover:bg-white sm: mb-4 font-bold">
               Hire me
-            </button>
-            <button className="px-1 py-1 pd-4 rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 text-white hover:bg-slate-300 hover:text-black font-bold">
+            </button> */}
+            <button onClick={handleDownloadCv} className="px-1 py-1 pd-4 rounded-full w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 text-white hover:bg-slate-300 hover:text-black font-bold">
               <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
                 Download CV
               </span>

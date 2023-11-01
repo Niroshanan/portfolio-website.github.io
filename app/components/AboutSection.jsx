@@ -44,31 +44,35 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about.jpeg" width={500} height={600} alt="about-image" />
+        <Image
+          src="/images/contact.JPG"
+          width={400}
+          height={500}
+          alt="about-image"
+        />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          I am a dedicated and enthusiastic Computer Science student with a strong 
-          foundation in programming, including Java, C#, and C. My passion for software 
-          development drives me to continuously learn and adapt to new technologies and 
-          languages. Through both independent and team-based projects during my academic 
-          journey, I&#39;ve honed my problem-solving and collaboration skills. I&#39;m excited 
-          to apply my knowledge and contribute to real-world solutions, making a 
-          positive impact in the field of software engineering
+            I am a dedicated and enthusiastic Computer Science student with a
+            strong foundation in programming, including Java, C#, and C. My
+            passion for software development drives me to continuously learn and
+            adapt to new technologies and languages. Through both independent
+            and team-based projects during my academic journey, I&#39;ve honed
+            my problem-solving and collaboration skills. I&#39;m excited to
+            apply my knowledge and contribute to real-world solutions, making a
+            positive impact in the field of software engineering
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
               selectTab={() => handleTabChange("skills")}
               active={tab === "skills"}
             >
-              
               Skills
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
-              
               Education
             </TabButton>
           </div>
