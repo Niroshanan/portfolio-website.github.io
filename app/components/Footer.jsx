@@ -45,19 +45,22 @@ const Footer = () => {
             </h5>
             <p className="text-slate-400"> snirosh12@gmail.com</p>
             <p className="text-slate-400"> 0756740580</p>
-            <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/Niroshanan" target="blank">
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
-          <Link href="https://www.linkedin.com/in/niroshanan1998" target="blank">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
-        </div>
+            <div className="socials flex flex-row gap-2  justify-center md:justify-start">
+              <Link href="https://github.com/Niroshanan" target="blank">
+                <Image src={GithubIcon} alt="Github Icon" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/niroshanan1998"
+                target="blank"
+              >
+                <Image src={LinkedinIcon} alt="Linkedin Icon" />
+              </Link>
+            </div>
           </div>
         </div>
         <div className="col-span-3 text-center md:text-left  md:flex md:flex-row md:justify-end ">
           <div className="md:flex md:flex-col md:justify-end md:pr-8">
-          <p className="text-slate-400 ">All rights reserved</p>
+            <p className="text-slate-400 ">All rights reserved</p>
           </div>
         </div>
       </div>
