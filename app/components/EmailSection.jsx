@@ -10,18 +10,15 @@ const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PUBLIC_KEY)
-      .then((result) => {
-          console.log(result.text);
-          console.log("message sent");
-      }, (error) => {
-          console.log(error.text);
-          alert(error.text)
-      });
-  };
+    const sendEmail = (e) => {
+      e.preventDefault();
+      emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PUBLIC_KEY)
+        .then((result) => {
+          setEmailSubmitted(true);
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
 
   return (
     <section
@@ -53,7 +50,7 @@ const EmailSection = () => {
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={sendEmail}>
+          <form className="flex flex-col" onSubmit={sendEmail} ref={form}>
             <div className="mb-6">
               <label
                 htmlFor="user_email"
