@@ -8,16 +8,12 @@ import { MenuOverLayer } from "./MenuOverLayer";
 
 const navLinks = [
   {
-    title: "About",
-    path: "#about",
-  },
-  {
     title: "Project",
     path: "#project",
   },
   {
-    title: "Contact",
-    path: "#contact",
+    title: "About",
+    path: "#about",
   },
 ];
 
@@ -31,14 +27,14 @@ export const Nav = () => {
           className="text-2xl md:text-5xl text-white font-semibold"
         >
           <div>
-                <Image
-                    src={"/images/logo1.png"}
-                    alt='logo'
-                    className='rounded-full bg-[#181818]'
-                    height={75}
-                    width={75}
-                    />
-                </div>
+            <Image
+              src={"/images/logo2.png"}
+              alt="logo"
+              className="rounded-full bg-[#181818]"
+              height={75}
+              width={75}
+            />
+          </div>
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

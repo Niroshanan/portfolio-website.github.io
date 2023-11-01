@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef,useState } from "react";
+import emailjs from '@emailjs/browser';
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -7,36 +8,19 @@ import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const form = useRef();
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
 
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
-    }
+    emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PUBLIC_KEY)
+      .then((result) => {
+          console.log(result.text);
+          console.log("message sent");
+      }, (error) => {
+          console.log(error.text);
+          alert(error.text)
+      });
   };
 
   return (
@@ -44,7 +28,6 @@ const EmailSection = () => {
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
@@ -70,18 +53,18 @@ const EmailSection = () => {
             Email sent successfully!
           </p>
         ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
+          <form className="flex flex-col" onSubmit={sendEmail}>
             <div className="mb-6">
               <label
-                htmlFor="email"
+                htmlFor="user_email"
                 className="text-white block mb-2 text-sm font-medium"
               >
                 Your email
               </label>
               <input
-                name="email"
+                name="user_email"
                 type="email"
-                id="email"
+                id="user_email"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
                 placeholder="jacob@google.com"
@@ -89,18 +72,18 @@ const EmailSection = () => {
             </div>
             <div className="mb-6">
               <label
-                htmlFor="subject"
+                htmlFor="from_name"
                 className="text-white block text-sm mb-2 font-medium"
               >
-                Subject
+                Your Name
               </label>
               <input
-                name="subject"
+                name="user_name"
                 type="text"
-                id="subject"
+                id="user_name"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
+                placeholder="Your Name"
               />
             </div>
             <div className="mb-6">
