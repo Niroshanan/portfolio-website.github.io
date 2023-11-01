@@ -31,7 +31,7 @@ const Footer = () => {
       <div className="grid py-8 m-auto grid-cols-1 md:grid-cols-12 footer border border-t-[#33353F] border-l-transparent border-r-transparent">
         <div className="col-span-2">
           <Image
-            src={"/images/Contact.JPG"}
+            src={"/images/logo2.png"}
             alt="logo"
             className="rounded-lg bg-[#181818] m-auto"
             height={100}
@@ -47,13 +47,13 @@ const Footer = () => {
             <p className="text-slate-400"> 0756740580</p>
             <div className="socials flex flex-row gap-2  justify-center md:justify-start">
               <Link href="https://github.com/Niroshanan" target="blank">
-                <Image src={GithubIcon} alt="Github Icon" />
+                <Image src={GithubIcon} alt="Github Icon" width={35} className="hover:bg-[#242424]" />
               </Link>
               <Link
                 href="https://www.linkedin.com/in/niroshanan1998"
                 target="blank"
               >
-                <Image src={LinkedinIcon} alt="Linkedin Icon" />
+                <Image src={LinkedinIcon} alt="Linkedin Icon" width={35} className="hover:bg-[#242424]" />
               </Link>
             </div>
           </div>
