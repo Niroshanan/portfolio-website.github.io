@@ -12,7 +12,7 @@ const EmailSection = () => {
 
     const sendEmail = (e) => {
       e.preventDefault();
-      emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, process.env.PUBLIC_KEY)
+      emailjs.sendForm(process.env.SERVICE_ID, process.env.TEMPLATE_ID, form.current, 'JXIlJE819XncJtX5s')
         .then((result) => {
           setEmailSubmitted(true);
         }, (error) => {
