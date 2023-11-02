@@ -19,7 +19,7 @@ export const HeroSection = () => {
             </span>
             <br />
             <TypeAnimation
-              sequence={["Niroshanan", 1000, "an Undergraduate", 1000]}
+              sequence={["Niroshanan", 1000, "an Undergraduate", 1000,"Full Stack Developer", 1000]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
@@ -28,9 +28,7 @@ export const HeroSection = () => {
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
             I am a fourth-year student at the University of Kelaniya, currently
             pursuing a BSc Honors degree in Computer Science with a
-            specialization in Data Science. With a solid foundation in
-            programming languages like Java, C#, and C, as well as expertise in
-            web technologies such as HTML, CSS, JavaScript, React, and Next.js.
+            specialization in Data Science.
           </p>
           <div>
             {/* <button className="px-6 py-3 pd-4 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 text-white hover:bg-white sm: mb-4 font-bold">
