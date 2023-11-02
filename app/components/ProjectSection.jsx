@@ -39,7 +39,7 @@ const projectsData = [
     title: "Date Counter (Ongoing)",
     description:
       "A versatile Android app to effortlessly track and countdown important dates, from events to milestones",
-    image: "/images/projects/datecounter.png",
+      image: "/images/projects/dateCounter.png",
     tag: ["All", "Mobile"],
     gitUrl: "https://github.com/Niroshanan/Date_Counter",
     previewUrl: "/",
