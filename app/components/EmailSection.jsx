@@ -1,6 +1,6 @@
 "use client";
-import React, { useRef,useState } from "react";
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import GithubIcon from "../../public/github-icon.svg";
 import LinkedinIcon from "../../public/linkedin-icon.svg";
 import Link from "next/link";
@@ -10,30 +10,39 @@ const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const form = useRef();
 
-    const sendEmail = (e) => {
-      e.preventDefault();
-      emailjs.sendForm('service_8j7pzdb', 'template_30e5dkt', form.current, 'JXIlJE819XncJtX5s')
-        .then((result) => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_8j7pzdb",
+        "template_30e5dkt",
+        form.current,
+        "JXIlJE819XncJtX5s"
+      )
+      .then(
+        (result) => {
           setEmailSubmitted(true);
-        }, (error) => {
-            console.log(error.text);
-        });
-    };
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
 
   return (
-    <section
-      id="contact"
-      className="grid md:grid-cols-2  py-12 gap-4 relative"
-    >
+    <section id="contact" className="grid md:grid-cols-2  py-12 gap-4 relative">
       <div>
         <h5 className="text-xl font-bold text-white my-2">
           Let&apos;s Connect
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          I&apos;m currently looking for new opportunities, and my inbox is
+          always open. I&apos;m thrilled that you&apos;ve taken the time to
+          explore my portfolio, and I&apos;m eager to connect with you. Whether
+          you&apos;re interested in discussing potential internship
+          opportunities, have questions, or simply want to chat about our shared
+          passions in the field, I&apos;m just a message away.
         </p>
         {/* <div className="socials flex flex-row gap-2">
           <Link href="https://github.com/Niroshanan" target="blank">
