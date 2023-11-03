@@ -44,7 +44,7 @@ export const HeroSection = () => {
             </button>
           </div>
         </div>
-        <div className="col-span-5 place-self-center mt-4 lg:mt-0">
+        <div className="col-span-5 place-self-center mt-4 lg:mt-0 hidden sm:block ">
           <div className="rounded-full bg-[#181818] w-[250px] h-[250px] relative lg:w-[350px] lg:h-[350px]  ">
             <Image
               src={"/images/dev.png"}
